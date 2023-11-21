@@ -15,38 +15,50 @@ h1 {
 }
 
 section {
-    max-width: 600px;
-    margin: 20px auto;
+    max-width: 750px;
+    margin: 50px auto;
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   
 }
+
 
 h2 {
     font-family: 'Roboto', sans-serif;
     color: #007bff;
+    text-align: center;
 }
 
 dl {
     margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 20% 20%;
+    
 }
+
+dl ::first-letter{ /* solo toma la primera letra de cada inicio de un elemento*/ 
+    text-transform: capitalize;
+}
+
 
 dt {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     margin-bottom: 5px;
+    text-align: left;
 }
-
 dd {
     font-family: 'Roboto', sans-serif;
     margin-bottom: 10px;
     margin-left: 0; /* Alinear a la izquierda */
+    text-align: left;
 }
 
+
 dt::after {
-    content: ": ";
+    content: ":";
 }
 
 /* Añadir un poco de espacio entre los bloques dl */
