@@ -1,0 +1,84 @@
+: Vincular un archivo "index.html" con uno de JS "js/main.js". En el title y h1 principal del archivo HTML incorporar el texto "Ejercicio". Con JS leer directamente el contenido del elemento <title> e imprimirlo en la consola.
+
+
+2: Investigar el uso de listas descriptivas de HTML y agregar en el HTML dos de estas listas con los nombres y apellidos de cada integrante de la pareja que realiza el ejercicio. Por ejemplo, la pareja conformada por Luis Rodríguez Sánchez (con 1 nombre y 2 apellidos) y Ana Laura García (que tiene 2 nombes y 1 apellido) formaría estas listas:
+```
+<h2>Primer integrante</h2>
+<dl>
+    <dt>Primer nombre</dt>
+    <dd>Luis</dd>
+    <dt>Segundo nombre</dt>
+    <dd></dd>
+    <dt>Primer apellido</dt>
+    <dd>Rodríguez</dd>
+    <dt>Segundo apellido</dt>
+    <dd>Sánchez</dd>
+</dl>
+<h2>Segundo integrante</h2>
+<dl>
+    <dt>Primer nombre</dt>
+    <dd>Ana</dd>
+    <dt>Segundo nombre</dt>
+    <dd>Laura</dd>
+    <dt>Primer apellido</dt>
+    <dd>García</dd>
+    <dt>Segundo apellido</dt>
+    <dd></dd>
+</dl>
+```
+Respetar el uso de minúsculas y mayúsculas de los nombres y apellidos (el texto debe decir "Ana", no "ANA" ni "ana", etc)
+
+Estilizar libremente las listas con CSS, para que su diseño sea más interesante visualmente.
+
+
+3: Leer con JS, ni bien se cargue la página, los datos definidos en el HTML e informar en la consola los nombres completos de cada integrante con el siguiente formato:
+```
+-----
+Integrante 1: "Luis RODRÍGUEZ SÁNCHEZ"
+Integrante 2: "Ana Laura GARCÍA"
+-----
+```
+Para esto tener en cuenta que:
+- Debe utilizarse un único llamado a console.log para generar los 4 renglones.
+- Si uno de los integrantes tiene un solo nombre y/o apellido, no se debe imprimir en la consola los nombres con doble espacio ni espacios al inicio o final.
+ Esto debe estar automatizado. Es decir, en el ejemplo planteado, si en el HTML se agrega un 2do nombre para Luis o un 2do apellido para Laura, los nombres completos deben mostrarse en la consola con dicha informacion correctamente. En pocas palabras, se deben tomar los valores ingresados en el código fuente del HTML.
+
+Ejemplo incorrecto:
+```
+-----
+Integrante 1: "Luis  RODRÍGUEZ SÁNCHEZ"
+Integrante 2: "Ana Laura GARCÍA "
+-----
+```
+
+4: Si los nombres cargados en el HTML coinciden en algún caso (Ej: "Ana Laura García" y "Laura Verónica Gutiérrez Méndez" comparten un nombre, sin importar que sean en el 1er o 2do nombre) realizar las siguientes acciones:
+- Informar en la consola que hubo coincidencias.
+- Informar en un prompt que hubo coincidencias y solicitar en ese mismo prompt que se ingrese un color para destacar los nombres. Guardar el texto ingresado por el usuario ("red", "#c4203f", etc), ya que se precisará en el siguiente punto.
+- Utilizar el valor ingresado en el paso anterior para, con JS, agregarle estilos en línea a los nombres coincidentes, de tal manera que se destaquen en color los items de listas cuyos nombres coincidan. Por ej, en el navegador se mostraría así
+
+Primer nombre
+Ana
+Segundo nombre
+Laura <-- mostrarlo con el color elegido
+Primer apellido
+García
+Segundo apellido
+
+Primer nombre
+Laura <-- mostrarlo con el color elegido
+Segundo nombre
+Verónica
+Primer apellido
+Gutiérrez
+Segundo apellido
+Méndez
+
+Si, en cambio, no hay coincidencias, informar en la consola que no las hubo.
+
+Consultar a través de un confirm si se desea comparar los apellidos. En caso de responder afirmativamente, realizar la comparación de apellidos, con el mismo criterio que con los nombres y realizar las mismas acciones. En caso contrario no tomar ninguna acción.
+
+
+5: Analizar el código JS generado, buscando acciones repetidas y resolverlo mediante el uso de funciones. Por ejemplo, la generación del string con el nombre completo que se mostrará en consola del integrante, no debe repetirse, sino lograr que una función lo lleve a cabo y simplemente llamarla una vez para cada integrante.
+
+
+Bonus: Eliminar las listas descriptivas y reemplazarlas por un formulario con 2 inputs para los nombres del primer integrante y 2 más para sus apellidos y luego un botón con el texto "Completar". Agregar 4 campos más para los nombres y apellidos del 2do participantes y adicionar otro botón "Completar". Estilizar los inputs para que solo tengan una línea en el borde inferior, incluso cuando reciban el foco. Registrar el evento "click" de los botones, programándolos para que, al ser presionados, tomen los nombres y apellidos cargados actualmente en los inputs y modificar los pasos 3 y 4 para que cumplan las mismas tareas, pero obteniendo los valores del formulario esta vez, en lugar del HTML.
