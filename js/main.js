@@ -49,6 +49,15 @@ window.addEventListener('DOMContentLoaded',function(){ //Esperamos a que la vent
     mensaje += resultIntegrantes.join('\n') + '\n-----';
     console.log(mensaje);
     
-    })
+    // ------------------------------------------------------------------------------------------------------------------ //
+    console.log('ejercicio 4');
+    
+    function comparar(integrantes) {
         
         
+        
+    }
+    
+
+    }) // fin
+    
