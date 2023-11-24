@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@600&family=Outfit:wght@300&display=swap');
+
+html{
+    font-size: 16px;
+}
+
+body {
+    align-items: center;
+    background: linear-gradient(to right, #4CAF50, #3498db);
+    color: #453e3e;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Exo', sans-serif;
+    font-size: 1rem;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  form {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #3498db;
+    margin-bottom: 15px;
+    padding: 8px;
+    transition: border-bottom-color 0.3s;
+    width: 100%;
+  }
+
+  input:focus {
+    border-bottom-color: #4CAF50;
+    outline: none;
+  }
+
+  button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  button:hover {
+    background-color: #154818; 
+  }

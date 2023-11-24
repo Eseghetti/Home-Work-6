@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio</title>
+  <link rel="stylesheet" href="/styles/styles-form.css">
+</head>
+<body>
+    <h1>Ejercicio</h1>
+
+    <form>
+        <label for="primerNombre">Primer Nombre</label>
+        <input type="text" id="primerNombre" name="primerNombre" required>
+
+        <label for="segundoNombre">Segundo Nombre</label>
+        <input type="text" id="segundoNombre" name="segundoNombre">
+
+        <label for="primerApellido">Primer Apellido</label>
+        <input type="text" id="primerApellido" name="primerApellido" required>
+
+        <label for="segundoApellido">Segundo Apellido</label>
+        <input type="text" id="segundoApellido" name="segundoApellido">
+
+        <button type="submit" onclick="resetForm()">Completar</button>
+    </form>
+
+    <script src="/js/form.js"></script>
+
+</body>
+</html>
