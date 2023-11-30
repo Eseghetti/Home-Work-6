@@ -81,4 +81,10 @@ Consultar a través de un confirm si se desea comparar los apellidos. En caso de
 5: Analizar el código JS generado, buscando acciones repetidas y resolverlo mediante el uso de funciones. Por ejemplo, la generación del string con el nombre completo que se mostrará en consola del integrante, no debe repetirse, sino lograr que una función lo lleve a cabo y simplemente llamarla una vez para cada integrante.
 
 
-Bonus: Eliminar las listas descriptivas y reemplazarlas por un formulario con 2 inputs para los nombres del primer integrante y 2 más para sus apellidos y luego un botón con el texto "Completar". Agregar 4 campos más para los nombres y apellidos del 2do participantes y adicionar otro botón "Completar". Estilizar los inputs para que solo tengan una línea en el borde inferior, incluso cuando reciban el foco. Registrar el evento "click" de los botones, programándolos para que, al ser presionados, tomen los nombres y apellidos cargados actualmente en los inputs y modificar los pasos 3 y 4 para que cumplan las mismas tareas, pero obteniendo los valores del formulario esta vez, en lugar del HTML.
+Bonus: Eliminar las listas descriptivas y reemplazarlas por un formulario con 2 inputs para los nombres del primer 
+integrante y 2 más para sus apellidos y luego un botón con el texto "Completar".
+Agregar 4 campos más para los nombres y apellidos del 2do participantes y adicionar otro botón "Completar".
+Estilizar los inputs para que solo tengan una línea en el borde inferior, incluso cuando reciban el foco.
+Registrar el evento "click" de los botones, programándolos para que, al ser presionados, tomen los nombres y apellidos 
+cargados actualmente en los inputs y modificar los pasos 3 y 4 para que cumplan las mismas tareas, pero obteniendo los 
+valores del formulario esta vez, en lugar del HTML.
