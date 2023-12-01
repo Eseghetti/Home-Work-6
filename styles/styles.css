@@ -8,7 +8,7 @@ body {
     padding: 0;
 }
 
-h1 {
+h1,h2,h3 {
     font-family: 'Roboto', sans-serif;
     text-align: center;
     color: #007bff;
@@ -24,12 +24,6 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   
 }
 
-
-h2 {
-    font-family: 'Roboto', sans-serif;
-    color: #007bff;
-    text-align: center;
-}
 
 dl {
     margin-bottom: 20px;
