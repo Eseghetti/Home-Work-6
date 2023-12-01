@@ -38,7 +38,7 @@ dl {
     
 }
 
-dl ::first-letter{ /* solo toma la primera letra de cada inicio de un elemento*/ 
+h2,dl ::first-letter{ /* solo toma la primera letra de cada inicio de un elemento*/ 
     text-transform: capitalize;
 }
 

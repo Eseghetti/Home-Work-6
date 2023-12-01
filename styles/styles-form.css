@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@600&family=Outfit:wght@300&display=swap');
 
-html{
+html {
     font-size: 16px;
 }
 
@@ -16,28 +16,33 @@ body {
     justify-content: center;
     margin: 0;
     padding: 0;
-  }
+}
 
-  h1 {
+h2 {
     font-family: 'Outfit', sans-serif;
     font-size: 2rem;
     margin-bottom: 20px;
-  }
+    text-align: center;
+}
 
-  form {
+form {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
     width: 300px;
-  }
+}
 
-  label {
+label {
     display: block;
     margin-bottom: 8px;
-  }
+    text-align: center;
+}
 
-  input {
+input {
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #3498db;
@@ -45,14 +50,14 @@ body {
     padding: 8px;
     transition: border-bottom-color 0.3s;
     width: 100%;
-  }
+}
 
-  input:focus {
+input:focus {
     border-bottom-color: #4CAF50;
     outline: none;
-  }
+}
 
-  button {
+button {
     background-color: #4CAF50;
     border: none;
     border-radius: 5px;
@@ -60,8 +65,10 @@ body {
     cursor: pointer;
     font-size: 16px;
     padding: 10px 15px;
-  }
+    margin: auto;
+    display: block;
+}
 
-  button:hover {
-    background-color: #154818; 
-  }
+button:hover {
+    background-color: #154818;
+}

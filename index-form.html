@@ -8,22 +8,25 @@
 </head>
 <body>
     <h1>Ejercicio</h1>
-
-    <form id="integrantesForm">
-        <label for="primerNombre">Primer Nombre</label>
-        <input type="text" id="primerNombre" name="primerNombre" required>
-
-        <label for="segundoNombre">Segundo Nombre</label>
-        <input type="text" id="segundoNombre" name="segundoNombre">
-
-        <label for="primerApellido">Primer Apellido</label>
-        <input type="text" id="primerApellido" name="primerApellido" required>
-
-        <label for="segundoApellido">Segundo Apellido</label>
-        <input type="text" id="segundoApellido" name="segundoApellido">
-
-        <button type="submit">Completar</button>
-    </form>
+    <section>
+      <h2>primer integrante</h2>
+      <form id="form1">
+        <input type="text" placeholder="Primer Nombre" >
+        <input type="text" placeholder="Segundo Nombre">
+          <input type="text" placeholder="Primer Apellido">
+          <input type="text" placeholder="Segundo Apellido">
+          <button type="button" id="completar1">Completar</button>
+      </form>
+      
+      <h2>segundo integrante</h2>
+      <form id="form2">
+          <input type="text" placeholder="Primer Nombre" >
+          <input type="text" placeholder="Segundo Nombre">
+          <input type="text" placeholder="Primer Apellido">
+          <input type="text" placeholder="Segundo Apellido">
+          <button type="button" id="completar2">Completar</button>
+      </form>
+  </section>
 
     <script src="/js/form.js"></script>
 

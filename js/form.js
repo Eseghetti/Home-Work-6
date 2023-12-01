@@ -1,104 +1,71 @@
-const integrantes = [];
+document.addEventListener('DOMContentLoaded', () => {
+    const completar1 = document.getElementById('completar1');
+    const completar2 = document.getElementById('completar2');
 
-window.addEventListener('DOMContentLoaded', function () {
-    const integrantesForm = document.getElementById('integrantesForm');
+    completar1.addEventListener('click', () => {
+        procesarDatos('form1');
+        verificarCoincidencias();
+    });
+    completar2.addEventListener('click', () => {
+        procesarDatos('form2');
+        verificarCoincidencias();
+    });
+});
 
-    integrantesForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Evita que el formulario se envíe y recargue la página
+function procesarDatos(formId) {
+    const form = document.getElementById(formId);
+    const inputs = form.querySelectorAll('input[type="text"]');
+    let nombreCompleto = [];
 
-        const primerNombre = document.getElementById('primerNombre').value;
-        const segundoNombre = document.getElementById('segundoNombre').value;
-        const primerApellido = document.getElementById('primerApellido').value;
-        const segundoApellido = document.getElementById('segundoApellido').value;
-
-        const nuevoIntegrante = {
-            primerNombre: capitalizarPrimeraLetra(primerNombre),
-            segundoNombre: capitalizarPrimeraLetra(segundoNombre),
-            primerApellido: primerApellido.toUpperCase(),
-            segundoApellido: segundoApellido.toUpperCase()
-        };
-
-        integrantes.push(nuevoIntegrante);
-
-        // Muestra información de todos los integrantes
-        mostrarInformacion(integrantes);
-
-        // Compara nombres y resalta repetidos
-        const nombresRepetidos = compararNombres(integrantes);
-        if (nombresRepetidos.length > 0) {
-            console.log("Se repiten nombres");
-            const color = prompt("Se repiten nombres, ingrese un color para destacarlos");
-            resaltarRepetidos(nombresRepetidos, color);
+    inputs.forEach(input => {
+        if (input.value.trim() !== '') {
+            nombreCompleto.push(input.value.trim().toUpperCase());
         }
-
-        // Reinicia el formulario
-        event.target.reset();
     });
 
-    function capitalizarPrimeraLetra(texto) {
-        return texto.charAt(0).toUpperCase() + texto.slice(1);
-    }
+    console.log(`Integrante ${formId === 'form1' ? 1 : 2}: "${nombreCompleto.join(' ')}"`);
+}
 
-    function NombreExiste(valor) {
-        if (valor) {
-            return " " + valor;
-        } else {
-            return "";
+function verificarCoincidencias() {
+    const nombresForm1 = obtenerNombres('form1');
+    const nombresForm2 = obtenerNombres('form2');
+    let coincidencias = [];
+
+    nombresForm1.forEach(nombre1 => {
+        if (nombresForm2.includes(nombre1)) {
+            coincidencias.push(nombre1);
+        }
+    });
+
+    if (coincidencias.length > 0) {
+        console.log('Hay coincidencias');
+        let color = prompt('Hay coincidencias. Por favor ingrese un color para destacar:');
+        resaltarCoincidencias(coincidencias, color);
+    } else {
+        console.log('No hay coincidencias');
+    }
+}
+
+function obtenerNombres(formId) {
+    const form = document.getElementById(formId);
+    const inputs = form.querySelectorAll('input[type="text"]:nth-child(-n+2)');
+    let nombres = [];
+
+    for (let i = 0; i < inputs.length; i++) {
+        let valor = inputs[i].value.trim().toUpperCase();
+        if (valor !== '') {
+            nombres.push(valor);
         }
     }
 
-    function compararNombres(integrantes) {
-        const listaNombres = [];
-        const nombresRepetidos = [];
+    return nombres;
+}
 
-        for (let i = 0; i < integrantes.length; i++) {
-            listaNombres.push(
-                integrantes[i].primerNombre,
-                integrantes[i].segundoNombre,
-                integrantes[i].primerApellido,
-                integrantes[i].segundoApellido
-            );
+function resaltarCoincidencias(coincidencias, color) {
+    const todosLosInputs = document.querySelectorAll('input[type="text"]:nth-child(-n+2)');
+    todosLosInputs.forEach(input => {
+        if (coincidencias.includes(input.value.trim().toUpperCase())) {
+            input.style.color = color;
         }
-
-        for (let i = 0; i < listaNombres.length; i++) {
-            for (let j = 0; j < listaNombres.length; j++) {
-                if (j !== i && listaNombres[j] === listaNombres[i] && !nombresRepetidos.includes(listaNombres[j])) {
-                    nombresRepetidos.push(listaNombres[j]);
-                }
-            }
-        }
-
-        return nombresRepetidos;
-    }
-
-    function resaltarRepetidos(elementosRepetidos, color) {
-        for (var i = 0; i < elementosRepetidos.length; i++) {
-            const elementos = document.querySelectorAll(`.integrantes dd`);
-            for (var j = 0; j < elementos.length; j++) {
-                if (elementos[j].innerHTML === elementosRepetidos[i].toLowerCase()) {
-                    console.log(elementos[j].innerHTML);
-                    elementos[j].style.color = color;
-                }
-            }
-        }
-    }
-
-    function mostrarInformacion(integrantes) {
-        const mensaje = '-----\n';
-        const resultIntegrantes = [];
-
-        for (let i = 0; i < integrantes.length; i++) {
-            let txtIntegrante = "Integrante " + (i + 1) + ": ";
-
-            txtIntegrante += NombreExiste(integrantes[i].primerNombre);
-            txtIntegrante += NombreExiste(integrantes[i].segundoNombre);
-            txtIntegrante += NombreExiste(integrantes[i].primerApellido);
-            txtIntegrante += NombreExiste(integrantes[i].segundoApellido);
-
-            resultIntegrantes.push(txtIntegrante);
-        }
-
-        const mensajeFinal = mensaje + resultIntegrantes.join('\n') + '\n-----';
-        console.log(mensajeFinal);
-    }
-});
+    });
+}
